@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Accordian</title>
+    <style>
+        body {
+            background: #333;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 95vh;
+            align-items: stretch;
+            justify-content: flex-end;
+            border: 1px solid white;
+        }
+
+        .container div {
+            border: 1px solid white;
+            padding: 10px;
+            display: grid;
+            align-content: center;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .open {
+            flex: 5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item1 open">1
+            <p hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis laudantium quaerat
+                temporibus non
+                possimus totam rem explicabo molestiae vero perspiciatis ratione, et dignissimos consectetur inventore.
+                Itaque veritatis, fugit iusto voluptates reiciendis et eveniet! Reprehenderit, temporibus eaque quo
+                labore vel accusamus?</p>
+        </div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+    </div>
+
+    <script>
+
+        const panels = document.querySelectorAll('.container div');
+
+        function openPanel() {
+            panels.forEach(panel => panel.classList.remove('open'));
+            this.classList.add('open');
+        }
+
+        panels.forEach(panel => panel.addEventListener('click', openPanel));
+
+    </script>
+</body>
+
+</html>
